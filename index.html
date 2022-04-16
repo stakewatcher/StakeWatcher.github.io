@@ -46,7 +46,7 @@
 				<div class="container-fluid" id="menu-center">
 					<ul class="nav navbar-nav navbar-left">
 						<li class="nav-item">
-							<a class="nav-link active" href="#home"><i class="fas fa-home"></i> Home</a>
+							<a id="homenav" class="nav-link active" href="#home"><i class="fas fa-home"></i> Home</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="#notifications"><i class="fas fa-bell"></i> Notifications</a>
@@ -1016,6 +1016,27 @@ StakeWatcher for FREE
 				}
 			}
 		});
+	</script>
+	<script>
+	$(document).ready(function() {
+		$('.nav li a:not([target=_blank])').not().click(function(e) {
+
+			$('.nav li a.active').removeClass('active');
+			$('.nav li.active').removeClass('active');
+
+			var $parent = $(this);
+			$parent.addClass('active');
+			e.preventDefault();
+
+			setTimeout(function() {
+				$parent.removeClass('active');
+				$('#homenav').addClass('active');
+			}, 800);
+		});
+	});
+	</script>
+	<script>
+		
 	</script>
 </body>
 
