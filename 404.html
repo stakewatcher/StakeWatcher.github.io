@@ -6,12 +6,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Staking and Saving notifications at Binance. Get an alert everytime a coin becomes available.">
+    <meta name="author" content="StakeWatcher.com">
+    <meta name="keywords" content="staking,saving,defi,binance,notification,alert" />
     <meta http-equiv="cache-control" content="no-cache">
     <meta http-equiv='expires' content='0'>
     <meta http-equiv='pragma' content='no-cache'>
-    <title>Error 404 / TweetFeed</title>
+    <title>Staking and Saving notifications at Binance - StakeWatcher</title>
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
@@ -19,7 +20,7 @@
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <!-- Custom styles for this page -->
     <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-    <!-- Custom CSS 0xDanielLopez -->
+    <!-- Custom CSS -->
     <link href="css/table.css" rel="stylesheet">
     <link href="css/index.css" rel="stylesheet">
     <link href="css/tooltip.css" rel="stylesheet">
@@ -29,45 +30,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
     <!-- Microsoft -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <style>
-        .url{
-                background-color: #c8f6fd; 
-            }
-            .domain{
-                background-color: #a0dde6;  /* #34e3a4 */
-            }
-            .ip{
-                background-color: #34e3a4; 
-            }            
-            .sha256{
-                background-color: #EAC56E; 
-            }
-            .md5{
-                background-color: #ead18f; /* #ead18f */
-            }
-            @-webkit-keyframes highlight {
-                from { opacity: 0; }
-                to { opacity: 1; }
-            }
-            @-moz-keyframes highlight {
-                from { opacity: 0; }
-                to { opacity: 1; }
-            }
-            @-o-keyframes highlight {
-                from { opacity: 0; }
-                to { opacity: 1; }
-            }
-            @keyframes highlight {
-                from { opacity: 0; }
-                to { opacity: 1; }
-            }
-            .highlight td{
-                -webkit-animation: fadein 2s; /* Safari 4+ */
-                -moz-animation:    fadein 2s; /* Fx 5+ */
-                -o-animation:      fadein 2s; /* Opera 12+ */
-                animation:         fadein 2s; /* IE 10+ */
-            }
-        </style>
+    <script defer data-domain="stakewatcher.com" src="https://plausible.io/js/plausible.js"></script>
 </head>
 
 <body id="page-top">
@@ -79,409 +42,1000 @@
         <div id="content-wrapper" class="d-flex flex-column">
             <!-- Main Content -->
             <!-- Top bar -->
-            <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block fixed-top" style="background: linear-gradient(#1DA1F2 0%, #1DA1F2 100%);">
-                <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block fixed-top" style="background: linear-gradient(#0C0E12 0%, #0C0E12 100%);">
+                <div class="container-fluid" id="menu-center">
                     <ul class="nav navbar-nav navbar-left">
                         <li class="nav-item">
-                            <a class="nav-link" href="/"><i class="fas fa-home"></i> Home</a>
+                            <a id="homenav" class="nav-link active" href="#home"><i class="fas fa-home"></i> Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="feeds.html"><i class="fas fa-rss"></i> Feeds</a>
+                            <a class="nav-link" href="#notifications"><i class="fas fa-bell"></i> Notifications</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="graphs.html"><i class="fas fa-chart-pie"></i> Graphs</a>
+                            <a class="nav-link" href="#commands"><i class="fas fa-code"></i> Commands</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="researchers.html"><i class="fas fa-users"></i> Researchers</a>
+                            <a id="pro-nav" class="nav-link" href="#pro" style="font-size: 15px;font-family: 'Rubik', sans-serif;"><i class="fas fa-check-circle"></i> PRO</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="search.html"><i class="fas fa-search"></i> Search in database</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="hunt.html"><i class="fas fa-shield-alt"></i> Hunt</a>
+                            <a class="nav-link" target="_blank" href="https://t.me/stakewatcher_bot"><i class="fas fa-robot"></i> Telegram bot <sup><i class="fas fa-external-link-alt"></i></sup></a>
                         </li>
                     </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://twitter.com/i/lists/1423693426437001224" target="_blank"><i class="fab fa-twitter"></i> List <sup><i class="fas fa-external-link-alt"></i></sup></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://github.com/0xDanielLopez/TweetFeed" target="_blank"><i class="fab fa-github"></i> GitHub <sup><i class="fas fa-external-link-alt"></i></sup></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="about.html"><i class="fas fa-question-circle"></i> About</a>
-                        </li>
+                    <ul class="nav navbar-nav navbar-right"> 
+                        <li class="nav-item"> 
+                            <a class="nav-link" target="_blank" href="https://t.me/stakewatcher"><i class="fa fa-comments"></i> Support <sup><i class="fas fa-external-link-alt"></i></sup></a> 
+                        </li> 
                     </ul>
                 </div>
             </nav>
-            <nav class="navbar navbar-expand navbar-dark bg-dark d-lg-none" style="margin: 0;padding: 0;">
+            <nav class="navbar navbar-expand navbar-dark bg-dark d-lg-none" style="margin: 0;padding: 0;background: linear-gradient(#0C0E12 0%, #0C0E12 100%);">
                 <div class="container-fluid">
                     <ul class="navbar-nav">
                         <li class="nav-item" style="font-size: 15px">
-                            <a id="logo" class="nav-link" href="/"><i class="fas fa-fish"></i> TweetFeed</a>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav navbar-right">
-                        <li class="nav-item dropdown " style="font-size: 15px;">
-                            <a class="nav-link dropdown-toggle " href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false" style="outline: none;">
-                                &nbsp&nbsp&nbsp&nbsp<i class="fas fa-bars"></i>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink" style="background-color: #343A40;">
-                                <a class="dropdown-item" href="/statistics/"><i class="fas fa-chart-area"></i> Statistics</a>
-                                <a class="dropdown-item" href="/protect/"><i class="fas fa-shield-alt"></i> Protect</a>
-                                <a class="dropdown-item" href="https://twitter.com/0xDanielLopez" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
-                                <a class="dropdown-item" href="/contact/"><i class="fas fa-envelope"></i> Contact</a>
-                                <a class="dropdown-item" href="/about/"><i class="fas fa-question-circle"></i> About</a>
-                            </div>
+                            <a id="logo" class="nav-link" href="/"><i class="fas fa-home"></i> <span>Stake</span><span>Watcher</span></a>
                         </li>
                     </ul>
                 </div>
             </nav>
             <!-- Top bar end -->
-            <div id="content">
-                <div id="presentationSecondary">
-                    <br><br><br>
-                    <h1><i class="fas fa-question-circle" style="font-size: 36px;"></i> Error 404</h1>
-                    <h2><em>Not found</em></h2>
+            <div id="contentMobile" class="d-lg-none">
+                <div id="presentationMobile">
+                    <br><br>
+                    <br><br><br><br>
+                    <h1><span style="color:black">Stake</span><span style="color:#F0B90B">Watcher</span></h1>
+                    <h2 style="font-size: 20px;font-family: 'Rubik', sans-serif;"><b style="color:#2AABEE">Telegram bot</b> that monitors <b>Locked Staking</b>, <b>Locked Saving</b> and <b>DEFI Staking</b> at <b><span style="color:#F0B90B">Binance</span></b></h2>
+                    <br>
+                    <!--<h3 style="font-size: 18px;font-family: 'Rubik', sans-serif;"><b>Test it</b>, first week you will get <b>PRO Subscription for Free!</b></h3> -->
+                    <br>
                 </div>
-                <hr style="border: 1px solid black;"> <!-- DIVIDER -->
+                <!-- Only mobile -->
+                <div style="font-size: 15px">
+                    <hr> <!-- DIVIDER -->
+                    <div class="d-flex justify-content-center">
+                        <a href="https://t.me/stakewatcher_bot" target="_blank" class="telegramim_button telegramim_shadow" style="font-size:18px;width:236px;background:#27A5E7;box-shadow:1px 1px 5px #27A5E7;color:#FFFFFF;border-radius:10px;border: 2px solid black;" title=""><i></i> Open StakeWatcher</a> </div>
+                    <hr> <!-- DIVIDER -->
+                </div>
+                <!-- End mobile -->
+            </div>
+            <div id="content" class="d-none d-md-none d-lg-block">
+                <!-- Topbar (center)-->
+                <!-- End of Topbar -->
+                <!-- Begin Page Content -->
+                <hr id="home"> <!-- DIVIDER -->
+                <div id="presentation">
+                    <br><br><br><br>
+                    <h1><span style="color:black">Stake</span><span style="color:#F0B90B">Watcher</span></h1>
+                    <h2 style="font-size: 20px;font-family: 'Rubik', sans-serif;"><b style="color:#2AABEE">Telegram bot</b> that monitors <b>Locked Staking</b>, <b>Locked Saving</b> and <b>DEFI Staking</b> at <b><span style="color:#F0B90B">Binance</span></b></h2>
+                    <br>
+                </div>
+                <br>
+                <div class="d-flex justify-content-center">
+                    <a href="https://t.me/stakewatcher_bot" target="_blank" class="telegramim_button telegramim_shadow" style="font-size:18px;width:236px;background:#27A5E7;box-shadow:1px 1px 5px #27A5E7;color:#FFFFFF;border-radius:10px;border: 2px solid black;" title=""><i></i> Open StakeWatcher</a>
+                </div>
+                <br>
+                <!--<div class="d-flex justify-content-center">
+                    <h3 style="font-size: 18px;font-family: 'Rubik', sans-serif;"><b>Test it</b>, first week you will get <b>PRO Subscription for Free!</b></h3>
+                </div> -->
+                <hr id="notifications"> <!-- DIVIDER -->
+                <br>
+                <div class="container-fluid">
+                    <div class="card shadow mb-4" style="border: 1px solid black;">
+                        <div class="card-header py-3 text-center">
+                            <span class="card-text cardTitle" style="color:black">Notifications</span>
+                        </div>
+                        <div class="card-body" style="font-size: 14px;font-family: 'Rubik', sans-serif;">
+                            <div class="row">
+                                <div class="col-3 border-right">
+                                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                        <a class="nav-link active p-1" id="v-pills-notification1-tab" data-toggle="pill" href="#v-pills-notification1" role="tab" aria-controls="v-pills-notification1" aria-selected="true">When coins become Available</a>
+                                        <a class="nav-link p-1" id="v-pills-notification2-tab" data-toggle="pill" href="#v-pills-notification2" role="tab" aria-controls="v-pills-notification2" aria-selected="false">When new coin is added to Binance</a>
+                                    </div>
+                                </div>
+                                <div class="col-9">
+                                    <section class="chat__body">
+                                        <div class="messages">
+                                            <div class="tab-content" id="v-pills-tabContent">
+                                                <div class="tab-pane fade show active" id="v-pills-notification1" role="tabpanel" aria-labelledby="v-pills-notification1-tab">
+                                                    <div class="row float-right">
+                                                        <div class="message my-message droplet mr-2">
+                                                            <div class="message__text">
+                                                                <div class="message__text__content">
+                                                                    <pre>
+🔔🔔🔔 Locked Staking 🔔🔔🔔
+
+ROSE (60)  | 16.81% | Now: Available
+MATIC (60) | 16.23% | Now: Available
+</pre>
+                                                                    <div class="message__time">18:12</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane fade" id="v-pills-notification2" role="tabpanel" aria-labelledby="v-pills-notification2-tab">
+                                                    <div class="row float-right">
+                                                        <div class="message my-message droplet mr-2">
+                                                            <div class="message__text">
+                                                                <div class="message__text__content">
+                                                                    <pre>
+🔔 New coins available for Locked Saving 🔔
+
+- LUNA, SAND
+
+</pre>
+                                                                    <div class="message__time">18:12</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> <!-- tab content -->
+                                        </div>
+                                    </section>
+                                    <svg height="0" width="0">
+                                        <defs>
+                                            <clipPath id="left-droplet">
+                                                <path d="M 10,0 A 10,10 0 0 1 0,10 H 16 V 0 Z">
+                                            </clipPath>
+                                            <clipPath id="right-droplet">
+                                                <path d="M 6,0 A 10,10 0 0 0 16,10 H 0 V 0 Z">
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div> <!-- col -->
+                            </div><!-- row -->
+                        </div> <!-- Card body -->
+                    </div><!-- Card -->
+                    <br>
+                    <hr id="commands"> <!-- DIVIDER -->
+                    <br>
+                    <div class="card shadow mb-4" style="border: 1px solid black;">
+                        <div class="card-header py-3 text-center">
+                            <span class="card-text cardTitle" style="color:black">Commands</span>
+                        </div>
+                        <div class="card-body" style="font-size: 14px;font-family: 'Rubik', sans-serif;">
+                            <div class="row">
+                                <div class="col-3 border-right">
+                                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                        <a class="nav-link active p-1" id="v-pills-command0-tab" data-toggle="pill" href="#v-pills-command0" role="tab" aria-controls="v-pills-command0" aria-selected="true">/start</a>
+                                        <hr style="border: 1px solid gray;" class="m-0"> <!-- DIVIDER -->
+                                        <a class="nav-link p-1" id="v-pills-command1-tab" data-toggle="pill" href="#v-pills-command1" role="tab" aria-controls="v-pills-command1" aria-selected="true">/help</a>
+                                        <a class="nav-link p-1" id="v-pills-command2-tab" data-toggle="pill" href="#v-pills-command2" role="tab" aria-controls="v-pills-command2" aria-selected="false">/status</a>
+                                        <hr style="border: 1px solid gray;" class="m-0"> <!-- DIVIDER -->
+                                        <a class="nav-link p-1" id="v-pills-command3-tab" data-toggle="pill" href="#v-pills-command3" role="tab" aria-controls="v-pills-command3" aria-selected="false">/add_staking</a>
+                                        <a class="nav-link p-1" id="v-pills-command4-tab" data-toggle="pill" href="#v-pills-command4" role="tab" aria-controls="v-pills-command4" aria-selected="false">/add_saving</a>
+                                        <a class="nav-link p-1" id="v-pills-command5-tab" data-toggle="pill" href="#v-pills-command5" role="tab" aria-controls="v-pills-command5" aria-selected="false">/add_defi</a>
+                                        <hr style="border: 1px solid gray;" class="m-0"> <!-- DIVIDER -->
+                                        <a class="nav-link p-1" id="v-pills-command6-tab" data-toggle="pill" href="#v-pills-command6" role="tab" aria-controls="v-pills-command6" aria-selected="false">/remove_staking</a>
+                                        <a class="nav-link p-1" id="v-pills-command7-tab" data-toggle="pill" href="#v-pills-command7" role="tab" aria-controls="v-pills-command7" aria-selected="false">/remove_saving</a>
+                                        <a class="nav-link p-1" id="v-pills-command8-tab" data-toggle="pill" href="#v-pills-command8" role="tab" aria-controls="v-pills-command8" aria-selected="false">/remove_defi</a>
+                                        <hr style="border: 1px solid gray;" class="m-0"> <!-- DIVIDER -->
+                                        <a class="nav-link p-1" id="v-pills-command9-tab" data-toggle="pill" href="#v-pills-command9" role="tab" aria-controls="v-pills-command9" aria-selected="false">/list_staking</a>
+                                        <a class="nav-link p-1" id="v-pills-command10-tab" data-toggle="pill" href="#v-pills-command10" role="tab" aria-controls="v-pills-command10" aria-selected="false">/list_saving</a>
+                                        <a class="nav-link p-1" id="v-pills-command11-tab" data-toggle="pill" href="#v-pills-command11" role="tab" aria-controls="v-pills-command11" aria-selected="false">/list_defi</a>
+                                        <hr style="border: 1px solid gray;" class="m-0"> <!-- DIVIDER -->
+                                        <a class="nav-link p-1" id="v-pills-command12-tab" data-toggle="pill" href="#v-pills-command12" role="tab" aria-controls="v-pills-command12" aria-selected="false">/top_staking</a>
+                                        <a class="nav-link p-1" id="v-pills-command13-tab" data-toggle="pill" href="#v-pills-command13" role="tab" aria-controls="v-pills-command13" aria-selected="false">/top_saving</a>
+                                        <a class="nav-link p-1" id="v-pills-command14-tab" data-toggle="pill" href="#v-pills-command14" role="tab" aria-controls="v-pills-command14" aria-selected="false">/top_defi</a>
+                                        <hr style="border: 1px solid gray;" class="m-0"> <!-- DIVIDER -->
+                                        <a class="nav-link p-1" id="v-pills-command15-tab" data-toggle="pill" href="#v-pills-command15" role="tab" aria-controls="v-pills-command15" aria-selected="false">/me_staking</a>
+                                        <a class="nav-link p-1" id="v-pills-command16-tab" data-toggle="pill" href="#v-pills-command16" role="tab" aria-controls="v-pills-command16" aria-selected="false">/me_saving</a>
+                                        <a class="nav-link p-1" id="v-pills-command17-tab" data-toggle="pill" href="#v-pills-command17" role="tab" aria-controls="v-pills-command17" aria-selected="false">/me_defi</a>
+                                        <hr style="border: 1px solid gray;" class="m-0"> <!-- DIVIDER -->
+                                        <a class="nav-link p-1" id="v-pills-command18-tab" data-toggle="pill" href="#v-pills-command18" role="tab" aria-controls="v-pills-command18" aria-selected="false">/pro</a>
+                                    </div>
+                                </div>
+                                <div class="col-9">
+                                    <section class="chat__body">
+                                        <div class="messages">
+                                            <div class="tab-content" id="v-pills-tabContent">
+                                                <div class="tab-pane fade show active" id="v-pills-command0" role="tabpanel" aria-labelledby="v-pills-command0-tab">
+                                                    <div class="row">
+                                                        <div class="message droplet ml-2">
+                                                            <div class="message__text">
+                                                                <div class="message__text__content"><span style="color:#2aabee;">/start</span>
+                                                                    <div class="message__time">18:12</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row float-right">
+                                                        <div class="message my-message droplet mr-2">
+                                                            <div class="message__text">
+                                                                <div class="message__text__content">
+                                                                    <pre>
+🔔 StakeWatcher 🔔
+
+Hi, welcome to StakeWatcher!
+
+This bot helps you tracking Staking/Saving
+options on Binance.
+
+You have 3 different Watchlists:
+
+- Locked Staking Watchlist
+- Locked Savings Watchlist
+- DEFI Staking Watchlist
+
+Add coins to these Watchlists and get notified
+everytime your coins become available
+
+ All comands can be found at <span style="color:#2aabee;">/help</span>
+
+More details at https://stakewatcher.com
+Any doubt you can contact <span style="color:#2aabee;">@StakeWatcher</span>
+for support
+</pre>
+                                                                    <div class="message__time">18:12</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane fade show" id="v-pills-command1" role="tabpanel" aria-labelledby="v-pills-command1-tab">
+                                                    <div class="row">
+                                                        <div class="message droplet ml-2">
+                                                            <div class="message__text">
+                                                                <div class="message__text__content"><span style="color:#2aabee;">/help</span>
+                                                                    <div class="message__time">18:12</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row float-right">
+                                                        <div class="message my-message droplet mr-2">
+                                                            <div class="message__text">
+                                                                <div class="message__text__content">
+                                                                    <pre>
+Available commands
+
+- <span style="color:#2aabee;">/help</span> -> Get help
+- <span style="color:#2aabee;">/status</span> -> See your configuration
+- <span style="color:#2aabee;">/add_staking</span> -> Add coin to Staking Watchlist
+- <span style="color:#2aabee;">/add_saving</span> -> Add coin to Saving Watchlist
+- <span style="color:#2aabee;">/add_defi</span> -> Add coin to DEFI Watchlist
+- <span style="color:#2aabee;">/remove_staking</span> -> Remove coin from Staking
+   Watchlist
+- <span style="color:#2aabee;">/remove_saving</span> -> Remove coin from Saving
+   Watchlist
+- <span style="color:#2aabee;">/remove_DEFI</span> -> Remove coin from DEFI
+   Watchlist
+- <span style="color:#2aabee;">/list_staking</span> -> List of available coins
+   for Staking
+- <span style="color:#2aabee;">/list_saving</span> -> List of available coins
+   for Saving
+- <span style="color:#2aabee;">/list_defi</span> -> List of available coins
+   for DEFI
+- <span style="color:#2aabee;">/top_staking</span> -> Top coins for Staking
+- <span style="color:#2aabee;">/top_saving</span> -> Top coins for Saving
+- <span style="color:#2aabee;">/top_defi</span> -> Top coins for DEFI Staking
+- <span style="color:#2aabee;">/me_staking</span> -> My top coins for Staking
+- <span style="color:#2aabee;">/me_saving</span> -> My top coins for Saving
+- <span style="color:#2aabee;">/me_defi</span> -> My top coins for DEFI
+- <span style="color:#2aabee;">/pro</span> -> PRO Subscription
+</pre>
+                                                                    <div class="message__time">18:12</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane fade" id="v-pills-command2" role="tabpanel" aria-labelledby="v-pills-command2-tab">
+                                                    <div class="row">
+                                                        <div class="message droplet ml-2">
+                                                            <div class="message__text">
+                                                                <div class="message__text__content"><span style="color:#2aabee;">/status</span>
+                                                                    <div class="message__time">18:12</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row float-right">
+                                                        <div class="message my-message droplet mr-2">
+                                                            <div class="message__text">
+                                                                <div class="message__text__content">
+                                                                    <pre>
+<b>Locked Staking</b> Watchlist (4)
+- BNB, MATIC, ROSE, SAND 
+
+<b>Locked Saving</b> Watchlist (2)
+- BUSD, USDT 
+
+<b>DEFI Staking</b> Watchlist (4)
+- BTC, BUSD, ETH, USDT
+
+✅ PRO User until: 30 April, 2022
+</pre>
+                                                                    <div class="message__time">18:12</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane fade" id="v-pills-command3" role="tabpanel" aria-labelledby="v-pills-command3-tab">
+                                                    <div class="row">
+                                                        <div class="message droplet ml-2">
+                                                            <div class="message__text">
+                                                                <div class="message__text__content"><span style="color:#2aabee;">/add_staking</span> BNB
+                                                                    <div class="message__time">18:12</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row float-right">
+                                                        <div class="message my-message droplet mr-2">
+                                                            <div class="message__text">
+                                                                <div class="message__text__content">
+                                                                    <pre>
+✅ Coin <b>BNB</b> has been added
+to Staking Watchlist
+</pre>
+                                                                    <div class="message__time">18:12</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane fade" id="v-pills-command4" role="tabpanel" aria-labelledby="v-pills-command4-tab">
+                                                    <div class="row">
+                                                        <div class="message droplet ml-2">
+                                                            <div class="message__text">
+                                                                <div class="message__text__content"><span style="color:#2aabee;">/add_saving</span> USDT
+                                                                    <div class="message__time">18:12</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row float-right">
+                                                        <div class="message my-message droplet mr-2">
+                                                            <div class="message__text">
+                                                                <div class="message__text__content">
+                                                                    <pre>
+✅ Coin <b>USDT</b> has been added
+to Saving Watchlist
+</pre>
+                                                                    <div class="message__time">18:12</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane fade" id="v-pills-command5" role="tabpanel" aria-labelledby="v-pills-command4-tab">
+                                                    <div class="row">
+                                                        <div class="message droplet ml-2">
+                                                            <div class="message__text">
+                                                                <div class="message__text__content"><span style="color:#2aabee;">/add_defi</span> USDT
+                                                                    <div class="message__time">18:12</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row float-right">
+                                                        <div class="message my-message droplet mr-2">
+                                                            <div class="message__text">
+                                                                <div class="message__text__content">
+                                                                    <pre>
+✅ Coin <b>USDT</b> has been added
+to DEFI Watchlist
+</pre>
+                                                                    <div class="message__time">18:12</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane fade" id="v-pills-command6" role="tabpanel" aria-labelledby="v-pills-command4-tab">
+                                                    <div class="row">
+                                                        <div class="message droplet ml-2">
+                                                            <div class="message__text">
+                                                                <div class="message__text__content"><span style="color:#2aabee;">/remove_staking</span> BNB
+                                                                    <div class="message__time">18:12</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row float-right">
+                                                        <div class="message my-message droplet mr-2">
+                                                            <div class="message__text">
+                                                                <div class="message__text__content">
+                                                                    <pre>
+✅ Coin <b>BNB</b> deleted
+from Staking Watchlist
+</pre>
+                                                                    <div class="message__time">18:12</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane fade" id="v-pills-command7" role="tabpanel" aria-labelledby="v-pills-command4-tab">
+                                                    <div class="row">
+                                                        <div class="message droplet ml-2">
+                                                            <div class="message__text">
+                                                                <div class="message__text__content"><span style="color:#2aabee;">/remove_saving</span> USDT
+                                                                    <div class="message__time">18:12</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row float-right">
+                                                        <div class="message my-message droplet mr-2">
+                                                            <div class="message__text">
+                                                                <div class="message__text__content">
+                                                                    <pre>
+✅ Coin <b>USDT</b> deleted
+from Saving Watchlist
+</pre>
+                                                                    <div class="message__time">18:12</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane fade" id="v-pills-command8" role="tabpanel" aria-labelledby="v-pills-command4-tab">
+                                                    <div class="row">
+                                                        <div class="message droplet ml-2">
+                                                            <div class="message__text">
+                                                                <div class="message__text__content"><span style="color:#2aabee;">/remove_defi</span> USDT
+                                                                    <div class="message__time">18:12</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row float-right">
+                                                        <div class="message my-message droplet mr-2">
+                                                            <div class="message__text">
+                                                                <div class="message__text__content">
+                                                                    <pre>
+✅ Coin <b>USDT</b> deleted
+from DEFI Watchlist
+</pre>
+                                                                    <div class="message__time">18:12</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane fade" id="v-pills-command9" role="tabpanel" aria-labelledby="v-pills-command4-tab">
+                                                    <div class="row">
+                                                        <div class="message droplet ml-2">
+                                                            <div class="message__text">
+                                                                <div class="message__text__content"><span style="color:#2aabee;">/list_staking</span>
+                                                                    <div class="message__time">18:12</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row float-right">
+                                                        <div class="message my-message droplet mr-2">
+                                                            <div class="message__text">
+                                                                <div class="message__text__content">
+                                                                    <pre>
+-------------------------
+<b>[Locked Staking]</b> List of coins
+-------------------------
+
+1INCH
+ACA
+ACH
+ADA
+ADX
+ALGO
+ALPHA
+ALPINE
+ANC
+ARPA
+ASTR
+ATOM
+AUCTION
+AVAX
+...
+</pre>
+                                                                    <div class="message__time">18:12</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane fade" id="v-pills-command10" role="tabpanel" aria-labelledby="v-pills-command4-tab">
+                                                    <div class="row">
+                                                        <div class="message droplet ml-2">
+                                                            <div class="message__text">
+                                                                <div class="message__text__content"><span style="color:#2aabee;">/list_saving</span>
+                                                                    <div class="message__time">18:12</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row float-right">
+                                                        <div class="message my-message droplet mr-2">
+                                                            <div class="message__text">
+                                                                <div class="message__text__content">
+                                                                    <pre>
+-------------------------
+<b>[Locked Saving]</b> List of coins
+-------------------------
+
+AXS
+BUSD
+CAKE
+COCOS
+DOCK
+DREP
+EGLD
+FUN
+JASMY
+LINK
+LUNA
+MDX
+SAND
+USDT
+</pre>
+                                                                    <div class="message__time">18:12</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane fade" id="v-pills-command11" role="tabpanel" aria-labelledby="v-pills-command4-tab">
+                                                    <div class="row">
+                                                        <div class="message droplet ml-2">
+                                                            <div class="message__text">
+                                                                <div class="message__text__content"><span style="color:#2aabee;">/list_defi</span>
+                                                                    <div class="message__time">18:12</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row float-right">
+                                                        <div class="message my-message droplet mr-2">
+                                                            <div class="message__text">
+                                                                <div class="message__text__content">
+                                                                    <pre>
+-------------------------
+<b>[DEFI Staking]</b> List of coins
+-------------------------
+
+AAVE
+BNB
+BTC
+BUSD
+DAI
+DYDX
+ETH
+HARD
+LINK
+SXP
+USDC
+USDT
+XVS
+</pre>
+                                                                    <div class="message__time">18:12</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane fade" id="v-pills-command12" role="tabpanel" aria-labelledby="v-pills-command4-tab">
+                                                    <div class="row">
+                                                        <div class="message droplet ml-2">
+                                                            <div class="message__text">
+                                                                <div class="message__text__content"><span style="color:#2aabee;">/top_staking</span>
+                                                                    <div class="message__time">18:12</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row float-right">
+                                                        <div class="message my-message droplet mr-2">
+                                                            <div class="message__text">
+                                                                <div class="message__text__content">
+                                                                    <pre>
+-------------------------
+<b>[Locked Staking]</b> Top 10 by Interest (est. APY)
+-------------------------
+
+1. BSW (90)   | 143.25 % | Available
+2. AXS (90)   | 120.69 % | Available
+3. GLMR (90)  | 101.69 % | Available
+4. AXS (60)   | 89.26 %  | -
+5. GLMR (60)  | 85.79 %  | -
+6. MC (120)   | 80.19 %  | Available
+7. BSW (60)   | 76.89 %  | Available
+8. AXS (30)   | 75.28 %  | Available
+9. BSW (30)   | 71.35 %  | Available
+10. CAKE (90) | 70.56 %  | Available
+</pre>
+                                                                    <div class="message__time">18:12</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane fade" id="v-pills-command13" role="tabpanel" aria-labelledby="v-pills-command4-tab">
+                                                    <div class="row">
+                                                        <div class="message droplet ml-2">
+                                                            <div class="message__text">
+                                                                <div class="message__text__content"><span style="color:#2aabee;">/top_saving</span>
+                                                                    <div class="message__time">18:12</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row float-right">
+                                                        <div class="message my-message droplet mr-2">
+                                                            <div class="message__text">
+                                                                <div class="message__text__content">
+                                                                    <pre>
+-------------------------
+<b>[Locked Saving]</b> Top 10 by Interest (est. APY)
+-------------------------
+
+1. AXS (15)    | 50.0 % | Available
+2. CAKE (15)   | 50.0 % | Available
+3. JASMY (60)  | 35.0 % | -
+4. AXS (7)     | 25.0 % | Available
+5. CAKE (7)    | 25.0 % | Available
+6. DOCK (15)   | 25.0 % | Available
+7. JASMY (90)  | 25.0 % | Available
+8. MDX (15)    | 25.0 % | -
+9. DREP (15)   | 20.0 % | Available
+10. COCOS (15) | 20.0 % | -
+</pre>
+                                                                    <div class="message__time">18:12</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane fade" id="v-pills-command14" role="tabpanel" aria-labelledby="v-pills-command4-tab">
+                                                    <div class="row">
+                                                        <div class="message droplet ml-2">
+                                                            <div class="message__text">
+                                                                <div class="message__text__content"><span style="color:#2aabee;">/top_defi</span>
+                                                                    <div class="message__time">18:12</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row float-right">
+                                                        <div class="message my-message droplet mr-2">
+                                                            <div class="message__text">
+                                                                <div class="message__text__content">
+                                                                    <pre>
+-------------------------
+<b>[DEFI Staking]</b> Top 10 by Interest (est. APY)
+-------------------------
+
+1. DYDX (30)             | 25.12 % | Available
+2. BUSD (120)            | 13.33 % | Available
+3. ETH (120)             | 10.12 % | Available
+4. HARD (Flexible Lock)  | 10.0 %  | Available
+5. BTC (60)              | 8.19 %  | Available
+6. AAVE (30)             | 6.49 %  | Available
+7. BNB (Flexible Lock)   | 5.23 %  | Available
+8. XVS (Flexible Lock)   | 4.12 %  | -
+9. DAI (Flexible Lock)   | 3.78 %  | -
+10. BUSD (Flexible Lock) | 3.21 %  | Available
+</pre>
+                                                                    <div class="message__time">18:12</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane fade" id="v-pills-command15" role="tabpanel" aria-labelledby="v-pills-command4-tab">
+                                                    <div class="row">
+                                                        <div class="message droplet ml-2">
+                                                            <div class="message__text">
+                                                                <div class="message__text__content"><span style="color:#2aabee;">/me_staking</span>
+                                                                    <div class="message__time">18:12</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row float-right">
+                                                        <div class="message my-message droplet mr-2">
+                                                            <div class="message__text">
+                                                                <div class="message__text__content">
+                                                                    <pre>
+-----------------------------
+<b>[Locked Staking]</b> My Top by Interest (est. APY)
+-----------------------------
+
+Watchlist: BNB, MATIC, ROSE, SAND
+
+1. ROSE (120)  | 27.38 % | Available
+2. ROSE (90)   | 23.03 % | -
+3. MATIC (90)  | 21.54 % | Available
+4. ROSE (60)   | 16.81 % | -
+5. MATIC (60)  | 16.23 % | -
+6. SAND (90)   | 15.19 % | Available
+7. ROSE (30)   | 14.12 % | Available
+8. BNB (120)   | 12.99 % | Available
+9. SAND (60)   | 10.75 % | -
+10. MATIC (30) | 10.24 % | Available
+</pre>
+                                                                    <div class="message__time">18:12</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane fade" id="v-pills-command16" role="tabpanel" aria-labelledby="v-pills-command4-tab">
+                                                    <div class="row">
+                                                        <div class="message droplet ml-2">
+                                                            <div class="message__text">
+                                                                <div class="message__text__content"><span style="color:#2aabee;">/me_saving</span>
+                                                                    <div class="message__time">18:12</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row float-right">
+                                                        <div class="message my-message droplet mr-2">
+                                                            <div class="message__text">
+                                                                <div class="message__text__content">
+                                                                    <pre>
+-----------------------------
+<b>[Locked Saving]</b> My Top by Interest (est. APY)
+-----------------------------
+
+Watchlist: BUSD, USDT
+
+1. BUSD (60) | 9.0 % | -
+2. USDT (60) | 9.0 % | Available
+3. BUSD (30) | 5.0 % | -
+4. USDT (30) | 5.0 % | Available
+</pre>
+                                                                    <div class="message__time">18:12</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane fade" id="v-pills-command17" role="tabpanel" aria-labelledby="v-pills-command4-tab">
+                                                    <div class="row">
+                                                        <div class="message droplet ml-2">
+                                                            <div class="message__text">
+                                                                <div class="message__text__content"><span style="color:#2aabee;">/me_defi</span>
+                                                                    <div class="message__time">18:12</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row float-right">
+                                                        <div class="message my-message droplet mr-2">
+                                                            <div class="message__text">
+                                                                <div class="message__text__content">
+                                                                    <pre>
+-----------------------------
+<b>[DEFI Staking]</b> My Top by Interest (est. APY)
+-----------------------------
+
+Watchlist: BTC, BUSD, ETH
+
+1. BUSD (120)           | 13.33 % | Available
+2. ETH (120)            | 10.12 % | Available
+3. BTC (60)             | 8.19 % | Available
+4. BUSD (Flexible Lock) | 3.21 % | Available
+5. ETH (Flexible Lock)  | 1.5 % | -
+6. BTC (Flexible Lock)  | 1.2 % | -
+</pre>
+                                                                    <div class="message__time">18:12</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane fade" id="v-pills-command18" role="tabpanel" aria-labelledby="v-pills-command4-tab">
+                                                    <div class="row">
+                                                        <div class="message droplet ml-2">
+                                                            <div class="message__text">
+                                                                <div class="message__text__content"><span style="color:#2aabee;">/pro</span>
+                                                                    <div class="message__time">18:12</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row float-right">
+                                                        <div class="message my-message droplet mr-2">
+                                                            <div class="message__text">
+                                                                <div class="message__text__content">
+                                                                    <pre>
+✅ PRO Subscription ✅
+
+- Add all the coins you want to your Watchlists
+- Check top coins available on Binance
+(e.g. /top_staking, ...)
+- Check top coins from your Watchlists available
+on Binance (e.g. /me_staking, ...)
+
+- Remember, you can continue using
+StakeWatcher for FREE
+</pre>
+                                                                    <div class="message__time">18:12</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> <!-- tab content -->
+                                        </div>
+                                    </section>
+                                    <svg height="0" width="0">
+                                        <defs>
+                                            <clipPath id="left-droplet">
+                                                <path d="M 10,0 A 10,10 0 0 1 0,10 H 16 V 0 Z">
+                                            </clipPath>
+                                            <clipPath id="right-droplet">
+                                                <path d="M 6,0 A 10,10 0 0 0 16,10 H 0 V 0 Z">
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div> <!-- col -->
+                            </div><!-- row -->
+                        </div> <!-- Card body -->
+                    </div><!-- Card -->
+                    <br>
+                    <hr id="pro"> <!-- DIVIDER -->
+                    <br>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="card shadow mb-4" style="border: 1px solid black;">
+                                <div class="card-header text-center">
+                                    <span class="card-text cardTitle" style="color:black">FREE</span>
+                                </div>
+                                <div class="card-body">
+                                    <ul style="color: black;font-size: 15px;font-family: 'Rubik', sans-serif;">
+                                        <li>Create <b>3 different Watchlists</b> (1 coin in each one)</li>
+                                        <li><b>Add</b> and <b>remove coins</b> from your Watchlists when you want</li>
+                                        <li><b>Receive notifications</b> when your coins become <b>Available</b></li>
+                                    </ul>
+                                </div>
+                            </div> <!-- card -->
+                        </div> <!-- class="col-sm-6" -->
+                        <div class="col-6">
+                            <div class="card shadow mb-4" style="border: 1px solid black;">
+                                <div class="card-header text-center">
+                                    <span class="card-text cardTitle" style="color:#d7a509">PRO</span>
+                                </div>
+                                <div class="card-body">
+                                    <!-- style="background-color: #DCDCDC;" -->
+                                    <ul style="color: black;font-size: 15px;font-family: 'Rubik', sans-serif;">
+                                        <li><b>All Free features +</b></li>
+                                        <ul class="fa-ul">
+                                            <li><i class="fa-li fa fa-check"></i><b style="color:#d7a509">No limit of coins</b> in Watchlists</li>
+                                        </ul>
+                                        <ul class="fa-ul">
+                                            <li><i class="fa-li fa fa-check"></i>Receive notifications when <b style="color:#d7a509">new coins are added to Binance</b></li>
+                                        </ul>
+                                        <!-- <ul class="fa-ul"> -->
+                                        <!--    <li><i class="fa-li fa fa-check"></i>Check <b style="color:#d7a509">Top coins by Interest</b> (est. APY)</li> -->
+                                        <!-- </ul>  -->
+                                        <!-- <ul class="fa-ul"> -->
+                                        <!--    <li><i class="fa-li fa fa-check"></i>Check <b style="color:#d7a509">Top coins from your Watchlists</b> by Interest (est. APY)</li>  -->
+                                        <!-- </ul> -->
+                                    </ul>
+                                </div>
+                            </div> <!-- card -->
+                        </div> <!-- class="col-sm-6" -->
+                    </div> <!-- row -->
+                    <hr style="border: 1px solid black;"> <!-- DIVIDER -->
+                    <div class="alert alert-secondary text-center" role="alert" style="color: #737373;font-size: 15px;font-family: 'Rubik', sans-serif;">
+                        Any question or inquiry, you can contact Support Team at <a href="https://t.me/stakewatcher" target="_blank" style="color: blue;">@StakeWatcher</a>
+                    </div>
+                </div>
+                <!-- /.container-fluid -->
             </div>
             <!-- End of Main Content -->
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
                 <div class="container-fluid py-1" style="color: black;">
                     <div class="row">
-                        <div class="col-md-4 text-left"><span class="text-decoration-none">By Daniel López</span></div>
+                        <div class="col-md-4 text-left"></div>
                         <div class="col-md-4 text-center"></div>
-                        <div class="col-md-4 text-right">20211011</div>
+                        <div class="col-md-4 text-right">20220409</div>
                     </div>
                     <div class="row">
-                        <div class="col-md-4 text-left"><a class="text-decoration-none" href="https://twitter.com/0xDanielLopez" target="_blank"><i class="fab fa-twitter"></i>&nbspTwitter</a></div>
+                        <div class="col-md-4 text-left"></div>
                         <div class="col-md-4 text-center"></div>
-                        <div class="col-md-4 text-right">TweetFeed</div>
+                        <div class="col-md-4 text-right">StakeWatcher</div>
                     </div>
                     <div class="row">
-                        <div class="col-md-4 text-left"><span class="text-decoration-none"><a class="text-decoration-none" href="https://www.linkedin.com/in/0xDanielLopez/" target="_blank"><i class="fab fa-linkedin"></i>&nbspLinkedIn</a></span></div>
-                        <div class="col-md-4 text-center">All credits to the infosec Community that share knowledge at Twitter</div>
-                        <div class="col-md-4 text-right">Made with <span>❤</span> in Andalucía, Spain</div>
+                        <div class="col-md-4 text-left"></div>
+                        <div class="col-md-4 text-center"><em>We are not affiliated in any way with Binance</em></div>
+                        <div class="col-md-4 text-right">Made with <span>❤</span> </div>
                     </div>
                 </div>
             </footer>
             <!-- End of Footer -->
         </div>
         <!-- End of Content Wrapper -->
-        <!-- End of Page Wrapper -->
-        <!-- Scroll to Top Button-->
-        <!-- Logout Modal-->
-        <!-- Bootstrap core JavaScript-->
-        <script src="vendor/jquery/jquery.min.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <!-- Core plugin JavaScript-->
-        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-        <!-- Custom scripts for all pages-->
-        <script src="js/sb-admin-2.min.js"></script>
-        <!-- Page level plugins -->
-        <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-        <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
-        <!-- Export -->
-        <script src="js/demo/datatables-demo.js"></script>
-        <!-- Page level custom scripts -->
-        <script>
-        $(function() {
-            let autorefresh = 1;
-            let init = 1;
-            let flag_new = 0;
-            $('#customSwitch1').click(function() {
-                if (autorefresh) {
-                    // Disabled
-                    autorefresh = 0;
-                    $(this).text('Enable Auto Refresh');
-                    clearInterval(timerAux);
-                } else {
-                    // Enabled
-                    autorefresh = 1;
-                    $(this).text('Disable Auto Refresh');
-                    init = 1;
-                    progressBar();
-                    loadData();
-
-                    table.rows().every(function() {
-
-                        $(this.node()).addClass('newRow');
-                    });
-                    animationNew();
-                    timerAux = setInterval(timerCycle, 6000);
-                }
-            })
-
-            let table = $('#dataTable').DataTable();
-            loadData();
-            progressBar();
-            var timerAux = setInterval(timerCycle, 6000);
-
-            function timerCycle() {
-                if (autorefresh) {
-                    loadData();
-                    progressBar();
-                }
-            }
-
-            function animation() {
-                //$('.today', '.col').animate({
-                //    opacity: 'toggle'
-                //});
-
-                $('.today', '.col').hide();
-                $('.today', '.col').fadeIn(1000, "linear");
-            }
-
-            function animationNew() {
-                //$('.newRow').animate({
-                //    opacity: 'toggle'
-                //}, "linear");
-                $('.newRow').hide();
-                $('.newRow').fadeIn(1000, "linear");
-            }
-
-            function progressBar() {
-                var timeleft = 5;
-                var downloadTimer = setInterval(function() {
-                    if (timeleft <= 0) {
-                        clearInterval(downloadTimer);
-                    }
-                    if (autorefresh == 0) {
-                        timeleft = 5;
-                        clearInterval(downloadTimer);
-                        document.getElementById("progressBar").value = 0;
-                    } else {
-                        document.getElementById("progressBar").value = 5 - timeleft;
-                    }
-                    timeleft -= 1;
-                }, 1000);
-            }
-            var loaddatacall = 0;
-            var olddate = '';
-
-            function loadData() {
-                if (init) {
-                    animation();
-                }
-                $.ajax({
-                    type: 'GET',
-                    context: document.body,
-                    url: 'https://raw.githubusercontent.com/0xDanielLopez/TweetFeed/master/today.csv',
-                    success: function(response) {
-                        var data = csvJSON(response);
-                        var last_date = data.at(-1)[0];
-                        var date1 = Date.parse(last_date).toString("MMMM dS, yyyy (HH:mm:ss) UTC");
-
-                        $("#lastDate").text("Last update: " + date1);
-
-                        if (loaddatacall > 0) {
-
-                            for (var i = data.length - 20; i < data.length; i++) {
-                                if (olddate < data[i][0]) {
-                                    console.log('old:' + olddate + '------- New:' + data[i][0]);
-                                    var type = data[i][2];
-
-                                    var user = data[i][1];
-                                    data[i][1] = '<a style="text-decoration: none;" target="_blank" href="https://twitter.com/' + user + '">' + user + '</a>'
-
-                                    var value = data[i][3];
-                                    // data[i][3] = '<a style="text-decoration: none;" target="_blank" href="https://www.virustotal.com/gui/search/' + value + '">' + value + '</a>'
-
-                                    var tweet_url = data[i][5];
-                                    data[i][5] = '<a style="text-decoration: none;" target="_blank" href="' + tweet_url + '"><i class="fab fa-twitter"></i> <i class="fas fa-external-link-alt"></i></a>'
-
-                                    // Add VT
-
-                                    if (value.startsWith("http://")) {
-                                        value = value.replace("http://", "");
-                                    } else if (value.startsWith("https://")) {
-                                        value = value.replace("https://", "");
-                                    }
-                                    data[i].push('<a style="text-decoration: none;" target="_blank" href="https://www.virustotal.com/gui/search/' + value + '"><img id="virustotal" src="img/vt.png" alt="VirusTotal"> <i class="fas fa-external-link-alt"></i></a>');
-
-                                    var node = table.row.add(data[i]).draw().node();
-                                    $(node).addClass('highlight');
-                                    $(node).addClass('newRow');
-                                    $(node).addClass(type);
-                                    flag_new = 1;
-                                }
-
-                            }
-
-                            if (flag_new && init == 0) {
-                                animation(); // Animate card-box
-                                animationNew(); // Animate new rows added
-                            }
-
-                            setTimeout(function() {
-                                // Here entry always
-                                $('tr').removeClass('highlight');
-                                $('tr').removeClass('newRow');
-                                flag_new = 0;
-                            }, 1000);
+    </div>
+    <!-- End of Page Wrapper -->
+    <!-- Scroll to Top Button-->
+    <!-- Logout Modal-->
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+    <!-- Page level plugins -->
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <!-- Export -->
+    <script src="js/demo/datatables-demo.js"></script>
+    <!-- Page level custom scripts -->
+    <script>
+    </script>
+    <script type="text/javascript">
+    (function() {
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.async = true;
+        script.src = "//telegram.im/widget-button/index.php";
+        document.getElementsByTagName("head")[0].appendChild(script);
+    })();
+    </script>
+    <script>
+    $('a[href*="#"]')
+        // Remove links that don't actually link to anything
+        .not('[href="#"]')
+        .not('[href="#0"]')
+        .not('[href^="#v"]')
+        .click(function(event) {
+            // On-page links
+            if (
+                location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') &&
+                location.hostname == this.hostname
+            ) {
+                // Figure out element to scroll to
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                // Does a scroll target exist?
+                if (target.length) {
+                    // Only prevent default if animation is actually gonna happen
+                    event.preventDefault();
+                    $('html, body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000, function() {
+                        // Callback after animation
+                        // Must change focus!
+                        var $target = $(target);
+                        $target.focus();
+                        if ($target.is(":focus")) { // Checking if the target was focused
+                            return false;
                         } else {
-
-                            for (var i = 0; i < data.length; i++) {
-                                // Add VT
-                                var value = data[i][3];
-
-                                if (value.startsWith("http://")) {
-                                    value = value.replace("http://", "");
-                                } else if (value.startsWith("https://")) {
-                                    value = value.replace("https://", "");
-                                }
-
-                                data[i].push('<a style="text-decoration: none;" target="_blank" href="https://www.virustotal.com/gui/search/' + value + '"><img id="virustotal" src="img/vt.png" alt="VirusTotal"> <i class="fas fa-external-link-alt"></i></a>');
-                            }
-
-                            table.rows.add(data).order([0, 'desc']).draw();
-                            table.rows().every(function() {
-
-                                $(this.node()).addClass('newRow');
-
-                                var col = $(this.node()).find('td').eq(2).text().trim();
-                                $(this.node()).toggleClass(col);
-
-                                var user = $(this.node()).find('td').eq(1).text().trim();
-                                $(this.node()).find('td').eq(1).html('<a style="text-decoration: none;" target="_blank" href="https://twitter.com/' + user + '">' + user + '</a>');
-
-                                var value = $(this.node()).find('td').eq(3).text().trim();
-                                // $(this.node()).find('td').eq(3).html('<a style="text-decoration: none;" target="_blank" href="https://www.virustotal.com/gui/search/' + value + '">' + value + '</a>');
-
-                                var tweet_url = $(this.node()).find('td').eq(5).text().trim();
-                                $(this.node()).find('td').eq(5).html('<a style="text-decoration: none;" target="_blank" href="' + tweet_url + '"><i class="fab fa-twitter"></i> <i class="fas fa-external-link-alt"></i></a> <a style="text-decoration: none;" target="_blank" href="https://www.virustotal.com/gui/search/' + value + '"></a>');
-
-                            })
-                            animationNew();
-                        }
-                        olddate = data[data.length - 1][0];
-                        countTypes('.today', data);
-                        loaddatacall++;
-                    },
-                    cache: false
-                });
-                //                                                        $.get('https://raw.githubusercontent.com/0xDanielLopez/TweetFeed/master/today.csv', function (response) {
-                //                                                        })
-                init = 0;
-                loaddatacall++;
-            }
-
-            function countTypes(className, jsonArr) {
-                var type = { 'sha256': 0, 'ip': 0, 'url': 0, 'domain': 0, 'md5': 0 };
-                for (var i = 0; i < jsonArr.length; i++) {
-                    type[jsonArr[i][2]]++;
+                            $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
+                            $target.focus(); // Set focus again
+                        };
+                    });
                 }
-
-                /*var myvar = '<tbody><tr>' +
-                    '<td style="padding: 4px;">URLs</td>' +
-                    '<td style="padding: 4px;" class="number-dynamic">' + type['url'] + '</td>' +
-                    '</tr>' +
-                    '<tr>' +
-                    '<td style="padding: 4px;">Domains</td>' +
-                    '<td style="padding: 4px;" class="number-dynamic">' + type['domain'] + '</td>' +
-                    '</tr>' +
-                    '<tr>' +
-                    '<td style="padding: 4px;">IPs</td>' +
-                    '<td style="padding: 4px;" class="number-dynamic">' + type['ip'] + '</td>' +
-                    '</tr>' +
-                    '<tr>' +
-                    '<td style="padding: 4px;">SHA256</td>' +
-                    '<td style="padding: 4px;" class="number-dynamic">' + type['sha256'] + '</td>' +
-                    '</tr>' +
-                    '<tr>' +
-                    '<td style="padding: 4px;">MD5</td>' +
-                    '<td style="padding: 4px;" class="number-dynamic">' + type['md5'] + '</td>' +
-                    '</tr></tbody>';*/
-
-                var myvar = '<div class="col">' +
-                    '<h5 style="text-align: center;font-size: 20px;"><b>' + type['url'] + '</b></h5>' +
-                    '</div>' +
-                    '<div class="col">' +
-                    '<h5 style="text-align: center;font-size: 20px;"><b>' + type['domain'] + '</b></h5>' +
-                    '</div>' +
-                    '<div class="col">' +
-                    '<h5 style="text-align: center;font-size: 20px;"><b>' + type['ip'] + '</b></h5>' +
-                    '</div>' +
-                    '<div class="col">' +
-                    '<h5 style="text-align: center;font-size: 20px;"><b>' + type['sha256'] + '</b></h5>' +
-                    '</div>' +
-                    '<div class="col">' +
-                    '<h5 style="text-align: center;font-size: 20px;"><b>' + type['md5'] + '</b></h5>' +
-                    '</div>'
-                $(className).html(myvar);
-
-                let p_url = type['url'];
-                let p_domain = type['domain'];
-                let p_ip = type['ip'];
-                let p_sha256 = type['sha256'];
-                let p_md5 = type['md5'];
             }
-
-            function csvJSON(csv) {
-
-                var lines = csv.split("\n");
-                var result = [];
-                //for (var i = lines.length - 1; i >= 0; i--) {
-                for (var i = 0; i < lines.length; i++) {
-                    var obj = [];
-                    var currentline = lines[i].split(",");
-                    if (currentline.length > 1) {
-                        for (var j = 0; j < currentline.length; j++) {
-                            obj.push(currentline[j]);
-                        }
-                        result.push(obj);
-                    }
-
-                }
-                return result;
-            }
-        })
-        </script>
-        <script>
-        function downloadCSV(csv, filename) {
-            var csvFile;
-            var downloadLink;
-            // CSV file
-            csvFile = new Blob([csv], { type: "text/csv" });
-            // Download link
-            downloadLink = document.createElement("a");
-            // File name
-            downloadLink.download = filename;
-            // Create a link to the file
-            downloadLink.href = window.URL.createObjectURL(csvFile);
-            // Hide download link
-            downloadLink.style.display = "none";
-            // Add the link to DOM
-            document.body.appendChild(downloadLink);
-            // Click download link
-            downloadLink.click();
-        }
-
-        function exportTableToCSV(filename) {
-            var csv = [];
-            var rows = document.querySelectorAll("table tr");
-            for (var i = 2; i < rows.length; i++) {
-                var row = [],
-                    cols = rows[i].querySelectorAll("td, th");
-                for (var j = 0; j < cols.length; j++)
-                    row.push(cols[j].innerText);
-                csv.push(row.join(","));
-            }
-
-            // Download CSV file
-            downloadCSV(csv.join("\n"), filename);
-        }
-        </script>
-        <script type="text/javascript" src="js/date.js"></script>
-        <script>
-        $(".nav a").on("click", function() {
-            $(".nav").find(".active").removeClass("active");
-            $(this).parent().addClass("active");
         });
-        </script>
+    </script>
+    <script>
+    $(document).ready(function() {
+        $('.nav li a:not([target=_blank])').not().click(function(e) {
+
+            $('.nav li a.active').removeClass('active');
+            $('.nav li.active').removeClass('active');
+
+            var $parent = $(this);
+            $parent.addClass('active');
+            e.preventDefault();
+
+            setTimeout(function() {
+                $parent.removeClass('active');
+                $('#homenav').addClass('active');
+            }, 800);
+        });
+    });
+    </script>
+
 </body>
 
-</html>
+</html
