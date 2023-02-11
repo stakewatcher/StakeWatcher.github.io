@@ -28,6 +28,35 @@
 	<!-- Microsoft -->
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<script defer data-domain="stakewatcher.com" src="https://plausible.io/js/plausible.js"></script>
+	<!-- Matomo -->
+	<script>
+	var _paq = window._paq = window._paq || [];
+	/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+	_paq.push(['trackPageView']);
+	_paq.push(['enableLinkTracking']);
+	(function() {
+		var u = "https://tweetfeedlive.matomo.cloud/";
+		_paq.push(['setTrackerUrl', u + 'matomo.php']);
+		_paq.push(['setSiteId', '2']);
+		var d = document,
+			g = d.createElement('script'),
+			s = d.getElementsByTagName('script')[0];
+		g.async = true;
+		g.src = '//cdn.matomo.cloud/tweetfeedlive.matomo.cloud/matomo.js';
+		s.parentNode.insertBefore(g, s);
+	})();
+	</script>
+	<!-- End Matomo Code -->
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org/",
+		"@type": "Organization",
+		"name": "StakeWatcher",
+		"url": "https://stakewatcher.com/",
+		"keywords": "staking,saving,defi,binance,notification,alert",
+		"slogan": "Staking and Saving notifications at Binance"
+	}
+	</script>
 </head>
 
 <body id="page-top">
@@ -1061,25 +1090,6 @@ StakeWatcher for FREE
 		});
 	});
 	</script>
-	<!-- Matomo -->
-	<script>
-	var _paq = window._paq = window._paq || [];
-	/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-	_paq.push(['trackPageView']);
-	_paq.push(['enableLinkTracking']);
-	(function() {
-		var u = "https://tweetfeedlive.matomo.cloud/";
-		_paq.push(['setTrackerUrl', u + 'matomo.php']);
-		_paq.push(['setSiteId', '2']);
-		var d = document,
-			g = d.createElement('script'),
-			s = d.getElementsByTagName('script')[0];
-		g.async = true;
-		g.src = '//cdn.matomo.cloud/tweetfeedlive.matomo.cloud/matomo.js';
-		s.parentNode.insertBefore(g, s);
-	})();
-	</script>
-	<!-- End Matomo Code -->
 </body>
 
 </html>
